@@ -1,0 +1,2 @@
+Site Credits
+	Navbar gradient color from: UIgradients.com - A little thing by @_ighosh
