@@ -16,8 +16,11 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
+        <%= link_to root_path, class: "navbar-brand" do %>
+          <%= icon('users') %>
+          Brand Match
         <!-- Same as <a href="/">SaaS</a> -->
-        <%= link_to 'SaaS', root_path, class: 'navbar-brand' %>
+        <% end %>
 
       </div>
 
