@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BrandmatchSaas</title>
+  <title>Saas Project</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">
+          <span class="sr-only">Toggle Navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to root_path, class: "navbar-brand" do %>
+          <%= icon('users') %>
+          Brand Match
+        <% end %>
 
-<%= yield %>
+      </div>
+
+      <div class="collapse navbar-collapse" id="main-nav-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "About", about_path %></li>
+          <li><%= link_to "Contact Us", new_contact_path %></li>
+        </ul>
+      
+      </div><!-- /.navbar=collapse -->
+    </div> 
+  </nav>
+
+<div class="container">
+ 
+  <% flash.each do |key, value| %>
+   <%= content_tag :div, value, class: "alert alert-#{key} alert-dismissable" %>
+  <% end %>
+
+  <%= yield %>
+</div>
 
 </body>
 </html>
